@@ -1,0 +1,94 @@
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Row(
+      children: [
+        Text("Photoshop Editing Course", style: TextStyle(fontSize: 20)),
+        Spacer(),
+        // Add user profile avatars using CircleAvatar
+      ],
+    ),
+    Text("A representation that can convey the three-dimensional..."),
+    Expanded(
+      child: ListView.builder(
+        itemCount: lessons.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: Icon(Icons.lock),
+            title: Text(lessons[index].title),
+            subtitle: Text("${lessons[index].duration}"),
+            trailing: IconButton(
+              icon: Icon(Icons.play_circle_fill),
+              onPressed: () {},
+            ),
+          );
+        },
+      ),
+    ),
+    ElevatedButton(
+      onPressed: () {},
+      child: Text("Enroll Now"),
+    ),
+  ],
+);
+
+
+Column(
+  children: [
+    Row(
+      children: [
+        CircleAvatar(backgroundImage: NetworkImage('user_image_url')),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Christiana Amandla", style: TextStyle(fontSize: 18)),
+            Text("Let's Learn smartly"),
+          ],
+        ),
+      ],
+    ),
+    Card(
+      child: ListTile(
+        title: Text("Mathematics Course"),
+        subtitle: Text("Completed: 20 | Hours Spent: 455"),
+      ),
+    ),
+    Expanded(
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemCount: courses.length,
+        itemBuilder: (context, index) {
+          return Card(
+            child: Column(
+              children: [
+                Image.asset(courses[index].image),
+                Text(courses[index].name),
+                Text("${courses[index].lessons} Lessons"),
+              ],
+            ),
+          );
+        },
+      ),
+    ),
+  ],
+);
+
+
+Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    Icon(Icons.check_circle, size: 50, color: Colors.green),
+    SizedBox(height: 10),
+    Text("Payment Success", style: TextStyle(fontSize: 24)),
+    Text("\$35.00", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
+    SizedBox(height: 10),
+    Text("Adobe XD Editing Course"),
+    Text("Invoice ID: TA11231PW"),
+    Text("Invoice Date: Nov 14, 2023"),
+    SizedBox(height: 20),
+    ElevatedButton(
+      onPressed: () {},
+      child: Text("Done"),
+    ),
+  ],
+);
